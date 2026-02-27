@@ -7,8 +7,21 @@
  * arrayChunk([0, 1, 2, 3, 4], 3) === [[0, 1, 2], [3, 4]]
  */
 
+
+
+// SOLUTION 1 BEST PRACTICE
+
+
+
 const arrayChunk = (array, size) => {
-  
+    const chunkedArray = [];
+    
+    for (let i = 0; i < array.length; i += size) {
+        const subArray = array.slice(i, i + size);
+        chunkedArray.push(subArray);
+    }
+
+    return chunkedArray;
 };
 
 module.exports = arrayChunk;
